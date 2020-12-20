@@ -132,7 +132,7 @@ class Database {
 
     public async getCoursesByCategoryId(categoryId: number): Promise<Array<course>> {
         try {
-            return await this.knex('courses').where({ "id_category": categoryId }).select('*');
+            return await this.knex('courses').where({ "id_category": categoryId }).select('*').orderBy('name');
         } catch {
             throw Error("Failed getting course by category id!");
         }
@@ -142,10 +142,10 @@ class Database {
         try {
             return limit ? await this.knex('courses')
             .where({ "id_category": categoryId })
-            .limit(limit).select('*') :
+            .limit(limit).select('*').orderBy('name') :
             await this.knex('courses')
             .where({ "id_category": categoryId })
-            .select('*');
+            .select('*').orderBy('name');
         } catch {
             throw Error("Failed getting courses!");
         }
@@ -203,7 +203,7 @@ class Database {
 
     public async getArticlesByCourseId(courseId: number): Promise<Array<article>> {
         try {
-            return await this.knex('articles').where({ "id_course": courseId }).select('*');
+            return await this.knex('articles').where({ "id_course": courseId }).select('*').orderBy('name');
         } catch {
             throw Error("Failed getting article by id!");
         }
@@ -213,10 +213,10 @@ class Database {
         try {
             return limit ? await this.knex('articles')
             .where({ "id_course": courseId })
-            .limit(limit).select('*') :
+            .limit(limit).select('*').orderBy('name') :
             await this.knex('courses')
             .where({ "id_course": courseId })
-            .select('*');
+            .select('*').orderBy('name');
         } catch {
             throw Error("Failed getting articles!");
         }
