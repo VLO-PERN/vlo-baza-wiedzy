@@ -20,6 +20,7 @@ export default function AdminEditCategory(props: any) {
         } else {
             loadCategory();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [jwtContext, history]);
     const loadCategory = () => {
         fetch(`/api/v1/category/${id}`).then(res => res.json())
