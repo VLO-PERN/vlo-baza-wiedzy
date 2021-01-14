@@ -1,5 +1,5 @@
 import Knex from 'knex';
-import knexConfig from '../../knexfile';
+import knexConfig from '../knexConfig';
 import article from '../interfaces/article';
 import category from '../interfaces/category';
 import course from '../interfaces/course';
