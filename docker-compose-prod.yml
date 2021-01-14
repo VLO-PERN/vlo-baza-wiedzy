@@ -1,0 +1,33 @@
+version: '3.1'
+
+services:
+
+  front:
+    build: ./vlo-baza-wiedzy-front
+    restart: always
+    ports:
+      - 80:80
+    network_mode: service:db
+
+  backend:
+    build: .
+    restart: always
+    ports:
+      - 5000:5000
+    network_mode: service:db
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_USERNAME: ${POSTGRES_USERNAME}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports: 
+      - 5432:5432
+    volumes:
+          - database_data_container:/var/lib/postgresql/data
+
+
+volumes: 
+  database_data_container:
