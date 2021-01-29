@@ -5,7 +5,7 @@ import Logo from '../Assets/Logo.svg';
 export const NavBar = (props: any) => {
     return (<>
     <NavBody>
-        <LogoImg src={Logo} alt="logo"></LogoImg>        
+        <LogoImg onClick={props.onClick} src={Logo} alt="logo"></LogoImg>        
     </NavBody>
     </>)
 }

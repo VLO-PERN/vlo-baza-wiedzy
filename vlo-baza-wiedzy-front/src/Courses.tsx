@@ -40,7 +40,9 @@ const Courses = (props: any) => {
     }
 
     return (<>
-        <NavBar />
+        <NavBar onClick={() => {
+            history.push(`/`);
+        }} />
         <Wrapper>
             {isLoading ? <Center><Spinner size="xl" ></Spinner></Center> : <>
                 <Title>{category.category["category_name"]} - kursy</Title>
