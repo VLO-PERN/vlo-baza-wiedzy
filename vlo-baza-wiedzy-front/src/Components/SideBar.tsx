@@ -77,6 +77,7 @@ const Title = styled.div`
 const ArticleName = styled.div`
     font-size: 16px;
     padding-left: 20px;
+    padding-right: 15px;
     line-height: 35px;
     font-weight: 100;
     user-select: none;
@@ -86,6 +87,7 @@ const ArticleName = styled.div`
 const ActiveArticleName = styled.div`
     font-size: 16px;
     padding-left: 20px;
+    padding-right: 15px;
     line-height: 35px;
     font-weight: 500;
     user-select: none;
