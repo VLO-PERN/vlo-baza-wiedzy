@@ -21,6 +21,8 @@ const NavBody = styled.div`
     justify-content: center;
     align-items: center;
 `;
+
 const LogoImg = styled.img`
+    cursor: pointer;
     height: 50px;
 `;
