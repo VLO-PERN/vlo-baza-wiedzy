@@ -71,17 +71,27 @@ const DisplayDiv = styled.div`
     width: 100%;
     padding-left: 20%;
     padding-right: 20%;
-    padding-top: 90px;
+    padding-top: 30px;
     overflow-y: scroll;
-    scrollbar-width: none;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(52 52 102 / 40%) transparent;
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(52 52 102 / 40%);
+        border-radius: 8px;
+    }
     @media (max-width: 650px) {
         padding-left: 30px;
         padding-right: 30px;
+    }
+    &::-webkit-scrollbar {
+        display: block;
+        width: 10px;
     }
 `;
 
 const CourseBody = styled.div`
     display: flex;
-    height: 100vh;
+    height: calc(100vh - 60px);
+    margin-top: 60px;
     width: 100vw;
 `;

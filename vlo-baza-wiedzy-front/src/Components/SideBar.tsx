@@ -102,10 +102,10 @@ const Centered = styled.div`
 `;
 
 const SideBodyDesktop = styled.div`
-    height: 100vh;
+    height: 100%;
     width: 270px;
     background-color: #182340; //#203663;
-    padding-top: 75px;
+    padding-top: 15px;
     overflow-y: scroll;
     scrollbar-width: none;
     @media (max-width: 1276px) {
