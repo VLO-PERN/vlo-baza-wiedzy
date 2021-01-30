@@ -22,5 +22,12 @@ body {
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  height: 0.6em;
+  width: 0.6em;
+  background-color: rgb(27, 27, 58);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(52 52 102 / 40%);
+  border-radius: 0.5rem;
 }

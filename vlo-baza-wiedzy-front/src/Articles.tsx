@@ -17,7 +17,7 @@ const Articles = (props: any) => {
     const [article, setArticle]: any = useState(null);
     useEffect(() => {
         loadArticle();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [articleId]);
     const loadArticle = () => {
         fetch(`/api/v1/article/${articleId}`).then(res => res.json()).then(data => {
@@ -46,10 +46,10 @@ const Articles = (props: any) => {
                 </Centered> :
                 <Suspense fallback={<Centered><Spinner size="xl" ></Spinner></Centered>}>
                     <Centered>
-                    <DisplayDiv ref={displayDivRef} className={"markdown-body"}>
-                        <ReactMarkdownWithHtml allowDangerousHtml source={`# ${article.name}\n${article.contents}`} />
-                        <Footer/>
-                    </DisplayDiv>
+                        <DisplayDiv ref={displayDivRef} className={"markdown-body"}>
+                            <ReactMarkdownWithHtml allowDangerousHtml source={`# ${article.name}\n${article.contents}`} />
+                            <Footer />
+                        </DisplayDiv>
                     </Centered>
                 </Suspense>}
         </CourseBody>
@@ -62,6 +62,7 @@ const Centered = styled.div`
     height: 100%;
     width: 100%;
     display: flex;
+    margin-top: 60px;
     justify-content: center;
     align-items: center;
 `;
@@ -82,6 +83,6 @@ const DisplayDiv = styled.div`
 
 const CourseBody = styled.div`
     display: flex;
-    height: 100vh;
+    height: calc(100vh - 60px);
     width: 100vw;
 `;
