@@ -106,4 +106,7 @@ const CategoryContainer = styled.div`
     grid-gap: 15px;
     margin-top: 50px;
     margin-bottom: 50px;
+    @media (max-width: 598px) {
+        width: 180px;
+    }
 `;
