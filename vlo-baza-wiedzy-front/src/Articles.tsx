@@ -74,6 +74,10 @@ const DisplayDiv = styled.div`
     padding-top: 90px;
     overflow-y: scroll;
     scrollbar-width: none;
+    @media (max-width: 650px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 `;
 
 const CourseBody = styled.div`
