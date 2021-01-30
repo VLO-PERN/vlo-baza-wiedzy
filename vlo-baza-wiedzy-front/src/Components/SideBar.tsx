@@ -108,7 +108,7 @@ const SideBodyDesktop = styled.div`
     padding-top: 75px;
     overflow-y: scroll;
     scrollbar-width: none;
-    @media (max-width: 768px) {
+    @media (max-width: 1276px) {
         display: none;
     }
 `;
@@ -123,7 +123,7 @@ const BurgerMenuMobile = styled.div`
     justify-content: center;
     align-items: center;
     z-index: 5;
-    @media (min-width: 769px) {
+    @media (min-width: 1277px) {
         display: none;
     }
 `;
