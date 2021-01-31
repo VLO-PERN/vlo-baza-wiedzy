@@ -5,7 +5,11 @@ import Logo from '../Assets/Logo.svg';
 export const NavBar = (props: any) => {
     return (<>
     <NavBody>
-        <LogoImg onClick={props.onClick} src={Logo} alt="logo"></LogoImg>        
+    {props.onClick ?
+        <LogoImgClickable onClick={props.onClick} src={Logo} alt="logo"></LogoImgClickable>
+        :
+        <LogoImg src={Logo} alt="logo"></LogoImg>
+    }       
     </NavBody>
     </>)
 }
@@ -21,6 +25,12 @@ const NavBody = styled.div`
     justify-content: center;
     align-items: center;
 `;
+
 const LogoImg = styled.img`
     height: 50px;
+`;
+
+const LogoImgClickable = styled.img`
+    height: 50px;
+    cursor: pointer;
 `;
