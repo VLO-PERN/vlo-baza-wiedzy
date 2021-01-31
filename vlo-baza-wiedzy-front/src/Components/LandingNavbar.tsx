@@ -15,7 +15,7 @@ const NavBody = styled.div`
     top: 0px;
     left: 0px;
     height: 100px;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

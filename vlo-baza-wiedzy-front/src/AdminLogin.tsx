@@ -26,6 +26,9 @@ export default function AdminLogin(props: any) {
             }),
             method: 'POST'
         }).then(res => res.json()).then(data => {
+            if (!data.token) {
+                throw Error(data.message);
+            }
             jwtContext.setJwt(data.token);
             history.push('/admin');
         }).catch(err => {

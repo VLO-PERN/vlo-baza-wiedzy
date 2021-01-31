@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const CategoryCard = (props: any) => {
     return (<>
-        <Wrapper>
+        <Wrapper style={props.style}>
             <Tint onClick={() => {props.onClick(props.id)}}>
                 <Text>
                     {props.name}
