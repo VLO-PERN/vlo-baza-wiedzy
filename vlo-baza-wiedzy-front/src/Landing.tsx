@@ -131,7 +131,7 @@ const CategoryContainer = styled.div`
     min-height: calc(100vh - 300px);
     margin-bottom: 150px;
     @media (max-width: 598px) {
-        width: 210px;
+        width: 230px;
     }
 `;
 
