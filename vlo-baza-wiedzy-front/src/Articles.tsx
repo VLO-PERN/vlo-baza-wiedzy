@@ -36,7 +36,7 @@ const Articles = (props: any) => {
     }
     return (<>
         <NavBar onClick={() => {
-            history.push(`/`);
+            history.push(`/#bottom`);
         }} />
         <CourseBody>
             <SideBar onClick={goToArticle} courseId={courseId} articleId={articleId} />

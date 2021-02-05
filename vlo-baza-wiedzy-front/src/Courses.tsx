@@ -41,7 +41,7 @@ const Courses = (props: any) => {
 
     return (<>
         <NavBar onClick={() => {
-            history.push(`/`);
+            history.push(`/#bottom`);
         }} />
         <Wrapper>
             {isLoading ? <Center><Spinner size="xl" ></Spinner></Center> : <>

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import { useHistory } from 'react-router';
 import { LandingNavbar } from './Components/LandingNavbar';
 import { useCategory } from './Hooks/useCategory';
@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { LandingCategoryCard } from './Components/LandingCategoryCard';
 import { BsChevronDown } from 'react-icons/bs';
+import AnimatedBg from './Assets/AnimatedBg.svg';
 
 export const Landing = (props: any) => {
     const history = useHistory();
@@ -18,13 +19,15 @@ export const Landing = (props: any) => {
             <LandingNavbar />
                     <Top>
                         <div>
-                        <Title>Baza Wiedzy V LO</Title>
-                        <Text>Nauka stała się przyjemna</Text>
+                        <Title>Wydajniejsza nauka</Title>
+                        <Text>Przyjemniejszy sposób</Text>
                         </div>
                     </Top>
+                    <ArrowDimmer>
                     <Arrow href="#bottom">
                     <BsChevronDown></BsChevronDown>
                     </Arrow>
+                    </ArrowDimmer>
                 </Hero>
                 <CategoryWrapper id="bottom">
                     <TitleBottom>Wybierz kategorię</TitleBottom>
@@ -47,8 +50,8 @@ export const Landing = (props: any) => {
 
 
 const Bg = styled.div`
-    background-color: #1b1b3a;
-    background-image: url("./bg.gif");
+    background-color:  #18181a;
+    background-image: url(${AnimatedBg});
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -77,13 +80,25 @@ const CenterRelative = styled.div`
     align-items: center;
 `;
 
+const FadeIn = keyframes`
+    0% {
+        opacity: 0;
+    }
+    66% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`;
+
 const Title = styled.div`
     font-size: calc(22px + 1.5vw);
     font-weight: 700;
     padding: calc(5px + 1vw);
     padding-top: 50px;
     text-align: center;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    animation: 3s ${FadeIn} ease;
 `;
 
 const Text = styled.div`
@@ -92,7 +107,7 @@ const Text = styled.div`
     padding: calc(10px + 1vw);
     padding-top: 0px;
     text-align: center;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    animation: 3.6s ${FadeIn} ease;
     @media (max-width: 1280px) {
         font-size: calc(10px + 1.5vw);
     }
@@ -154,10 +169,43 @@ const TitleBottom = styled.div`
     }
 `;
 
+const ArrowBounce = keyframes`
+    0% {
+        margin-top: 30px;
+        opacity: 1;
+    }
+    50% {
+        margin-top: 80px;
+        opacity: 1;
+    }
+    100% {
+        margin-top: 30px;
+        opacity: 1;
+    }
+`;
+
 const Arrow = styled.a`
     font-size: 30px;
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 30px;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    animation: 2s ${ArrowBounce} infinite ease;
+    animation-delay: 3.5s;
+`;
+
+const ArrowFadeIn = keyframes`
+0% {
+    opacity: 0;
+}
+75% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+`;
+
+const ArrowDimmer = styled.div`
+    animation: 3.5s ${ArrowFadeIn} ease;
 `;
