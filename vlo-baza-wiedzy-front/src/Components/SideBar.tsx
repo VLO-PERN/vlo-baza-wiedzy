@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { BsBook, BsBookHalf, BsViewList } from 'react-icons/bs';
+import { BsBook, BsBookHalf, BsFillCollectionFill, BsViewList } from 'react-icons/bs';
 import {
     Menu,
     MenuButton,
@@ -33,7 +33,7 @@ export const SideBar = (props: any) => {
                 <Centered><Spinner size="xl" ></Spinner></Centered>
                 : <>
                     <Title>
-                        {course.name}
+                        <BsFillCollectionFill style={{ display: "inline-block", marginRight: "10px", marginLeft: "5px" }} />{course.name}
                     </Title>
                     {articles.map((item: any, index: number) => item["id_article"] === props.articleId ?
                         <ActiveArticleName key={index}><BsBookHalf style={{ display: "inline-block", marginRight: "15px" }} />{item.name}</ActiveArticleName>
@@ -67,11 +67,17 @@ export const SideBar = (props: any) => {
 
 const Title = styled.div`
     font-weight: 500;
-    font-size: 15px;
-    color: #fc952c;
-    padding-left: 20px;
-    padding-right: 10px;
+    font-size: 16px;
+    background-color: #044fff;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 37px;
+    border-radius: 8px;
     user-select: none;
+    margin-bottom: 5px;
 `;
 
 const ArticleName = styled.div`
@@ -104,7 +110,7 @@ const Centered = styled.div`
 const SideBodyDesktop = styled.div`
     height: 100%;
     width: 270px;
-    background-color: #182340; //#203663;
+    background-color: #27272a; //#203663;
     padding-top: 15px;
     overflow-y: scroll;
     scrollbar-width: none;

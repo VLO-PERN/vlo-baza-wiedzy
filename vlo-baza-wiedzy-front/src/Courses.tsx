@@ -45,7 +45,7 @@ const Courses = (props: any) => {
         }} />
         <Wrapper>
             {isLoading ? <Center><Spinner size="xl" ></Spinner></Center> : <>
-                <Title>{category.category["category_name"]} - kursy</Title>
+                <Title>{category.category["category_name"]}</Title>
                 <CenterRelative>
                     <CoursesFlex>
                         {category.courses.map((item: any, index: number) =>
@@ -81,7 +81,7 @@ const CenterRelative = styled.div`
 const Wrapper = styled.div`
     margin-top: 60px;
     width: 100%;
-    background-color: #1B1B3A;
+    background-color: #18181a;
     color: white;
 `;
 

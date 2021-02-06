@@ -77,7 +77,7 @@ export default function AdminEditCategory(props: any) {
     return (<>
         <NavBar />
         <Wrapper>
-            <Title>Dodawanie kategorii</Title>
+            <Title>Edytowanie kategorii</Title>
             {isSending ? <Center><Spinner size="xl" ></Spinner></Center> :
                 <CenterRelative>
                     <CategoryPreview name={name} url={url} />
@@ -118,7 +118,7 @@ const CenterRelative = styled.div`
 const Wrapper = styled.div`
     margin-top: 60px;
     width: 100%;
-    background-color: #1B1B3A;
+    background-color: #18181a;
     color: white;
 `;
 

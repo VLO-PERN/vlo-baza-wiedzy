@@ -119,7 +119,7 @@ const DisplayDiv = styled.div`
     width: 50vw;
     overflow-y: scroll;
     scrollbar-width: none;
-    background-color: #1b1b3a;
+    background-color: #18181a;
 `;
 
 const Bottom = styled.div`

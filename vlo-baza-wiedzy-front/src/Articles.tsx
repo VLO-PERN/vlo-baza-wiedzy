@@ -74,10 +74,10 @@ const DisplayDiv = styled.div`
     padding-top: 30px;
     overflow-y: scroll;
     scrollbar-width: thin;
-    scrollbar-color: rgb(52 52 102 / 40%) transparent;
+    scrollbar-color: #27272a transparent;
     ::-webkit-scrollbar-thumb {
-        background-color: rgb(52 52 102 / 40%);
-        border-radius: 8px;
+        background-color: #27272a;
+        border-radius: 10px;
     }
     @media (max-width: 650px) {
         padding-left: 30px;

@@ -66,7 +66,7 @@ const CenterRelative = styled.div`
 const Wrapper = styled.div`
     margin-top: 60px;
     width: 100%;
-    background-color: #1B1B3A;
+    background-color: #18181a;
     color: white;
 `;
 

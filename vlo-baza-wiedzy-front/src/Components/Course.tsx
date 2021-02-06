@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 export const Course = (props: any) => {
     return (<>
-        <Wrapper>
+        <Wrapper onClick={() => { props.onClick(props.id) }}>
                 <>
-                    <Text onClick={() => { props.onClick(props.id) }}>{props.name}</Text>
+                    <Text>{props.name}</Text>
                 </>
         </Wrapper>
     </>)
@@ -13,26 +13,21 @@ export const Course = (props: any) => {
 
 const Text = styled.div`
     font-size: 18px;
-    font-weight: 400;
     color: white;
+    line-height: 70px;
     padding-left: 20px;
-    cursor: pointer;
     height: 100%;
     width: calc(100% - 80px);
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
 `;
 
 const Wrapper = styled.div`
     position: relative;
-    height: 50px;
+    cursor: pointer;
+    height: 70px;
     width: 100%;
-    border-radius: 8px;
+    background-color: #27272a;
+    border-radius: 10px;
     box-sizing: border-box;
-    border: 2px solid #004fff;
     display: flex;
     justify-content: space-between;
     align-items: center;

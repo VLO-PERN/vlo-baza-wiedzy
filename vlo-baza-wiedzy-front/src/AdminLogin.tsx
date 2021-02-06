@@ -79,6 +79,7 @@ const Wrapper = styled.div`
     max-width: 400px;
     margin: 30px;
     background-color: #004FFF;
+    border-radius: 10px;
     color: white;
 `;
 const Title = styled.div`
@@ -98,7 +99,7 @@ const Button = styled.button`
     color: white;
     padding: 12px;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 5000px;
     font-weight: 500;
     margin-top: 50px;
     transition: 0.4s;
