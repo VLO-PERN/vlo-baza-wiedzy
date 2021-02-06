@@ -171,15 +171,15 @@ const TitleBottom = styled.div`
 
 const ArrowBounce = keyframes`
     0% {
-        margin-top: 30px;
+        padding: 30px;
         opacity: 1;
     }
     50% {
-        margin-top: 80px;
+        padding: 80px;
         opacity: 1;
     }
     100% {
-        margin-top: 30px;
+        padding: 30px;
         opacity: 1;
     }
 `;
@@ -188,7 +188,7 @@ const Arrow = styled.a`
     font-size: 30px;
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    padding: 30px;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
     animation: 2s ${ArrowBounce} infinite ease;
     animation-delay: 3.5s;

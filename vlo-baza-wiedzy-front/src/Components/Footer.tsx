@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Footer = (props: any) => {
     return (<>
     <FooterBody>
-        <p><small>&copy; Copyright {(new Date()).getFullYear()}, Baza Wiedzy V LO</small></p>
+        <p><small>&copy; Copyright {(new Date()).getFullYear()}, Baza Wiedzy VLO</small></p>
     </FooterBody>
     </>)
 }
