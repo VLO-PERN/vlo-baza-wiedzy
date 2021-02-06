@@ -1,68 +1,91 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Fade} from 'react-reveal';
+
 
 export const LandingCategoryCard = (props: any) => {
     return (<>
-        <Wrapper onClick={() => {props.onClick(props.id)}} style={props.style}>
+        <Wrapper  style={props.style}>
+            <Fade>
             <Img src={props.img} alt=""></Img>
+            </Fade>
             <Bottom>
+                <Fade top delay={200}>
                 <Text>
                     {props.name}
                 </Text>
+                </Fade>
+                <Fade delay={300}>
+                    <Button onClick={() => {props.onClick(props.id)}}>Wybierz</Button>
+                </Fade>
             </Bottom>
         </Wrapper>
     </>)
 }
 
 const Bottom = styled.div`
-    height: 60px;
-    width: 100%;
-    background-color: #2b2d35;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    box-sizing: border-box;
-    border-top: 1px solid #044fff;
+    font-weight: 600;
+    height: 60vmin;
+    width: 60vmin;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 600;
-`;
-
-
-const Text = styled.div`
-    font-size: 23px;
-    color: white;
-`;
-
-const Img = styled.img`
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    height: 400px;
-    width: 400px;
-    object-fit: cover;
-    box-sizing: border-box;
-    @media (max-width: 600px) {
+    flex-direction: column;
+    @media (max-width: 1150px) {
         width: 200px;
         height: 200px;
     }
 `;
 
 
+const Text = styled.div`
+    font-size: 80px;
+    user-select: none;
+    color: white;
+    @media (max-width: 500px) {
+        font-size: 60px;
+    }
+`;
+
+const Img = styled.img`
+    border-radius: 4px;
+    height: calc(60vmin - 40px);
+    width: calc(60vmin - 40px);
+    margin: 20px;
+    object-fit: cover;
+    box-sizing: border-box;
+    @media (max-width: 1150px) {
+        width: 200px;
+        height: 200px;
+        @media (max-width: 500px) {
+            margin-top: 80px;
+        }
+    }
+`;
+
+
 const Wrapper = styled.div`
     position: relative;
-    height: 460px;
-    width: 400px;
-    background-color: black;
-    border-radius: 8px;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
-    transition: 1s ease;
-    &:hover {
-        transform: scale(1.02);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    @media (max-width: 500px) {
+        align-items: flex-start;
     }
-    @media (max-width: 600px) {
-        width: 200px;
-        height: 260px;
+`;
+
+const Button = styled.button`
+    width: 180px;
+    height: 50px;
+    color: white;
+    background-color: #044fff;
+    border-radius: 8000px;
+    outline: none;
+    transition: 1s;
+    &:hover {
+        background-color: #0030c0;
     }
 `;
