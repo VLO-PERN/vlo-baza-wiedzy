@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import { Spinner } from '@chakra-ui/react';
 import './Css/Markdown-dark.css';
 import { Footer } from './Components/Footer';
+import {Prism as SyntaxHiglighter} from 'react-syntax-highlighter';
+import './Css/prism.css'; // Custom syntax-highlighting to match the overall theme
 const ReactMarkdownWithHtml = React.lazy(() => import('react-markdown/with-html'));
 
 
@@ -47,7 +49,10 @@ const Articles = (props: any) => {
                 <Suspense fallback={<Centered><Spinner size="xl" ></Spinner></Centered>}>
                     <Centered>
                     <DisplayDiv ref={displayDivRef} className={"markdown-body"}>
-                        <ReactMarkdownWithHtml allowDangerousHtml source={`# ${article.name}\n${article.contents}`} />
+                        <ReactMarkdownWithHtml renderers={{code: ({language, value}) => <SyntaxHiglighter codeTagProps={{}} useInlineStyles={false} language={language} children={value}/>}}
+                        // codeTagProps disables some shitty default styles
+                        // useInlineStyles injects css classes so that u can add custom styles to elements
+                        allowDangerousHtml source={`# ${article.name}\n${article.contents}`} />
                         <Footer/>
                     </DisplayDiv>
                     </Centered>
