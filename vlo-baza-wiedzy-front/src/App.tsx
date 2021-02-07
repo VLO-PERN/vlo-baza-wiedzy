@@ -22,6 +22,7 @@ const AdminEditArticle = React.lazy(() => import("./AdminEditArticle"));
 const AdminEditCategory = React.lazy(() => import("./AdminEditCategory"));
 const Courses = React.lazy(() => import("./Courses"));
 const Articles = React.lazy(() => import("./Articles"));
+const CodeCapsule = React.lazy(() => import("./CodeCapsule"));
 
 const theme = extendTheme({
   styles: {
@@ -48,6 +49,10 @@ export const App = () => {
           <Suspense fallback={<>
             <NavBar></NavBar>
           </>}>
+          <Route exact path="/capsule/html" children={<CodeCapsule lang="html" />}/>
+          <Route exact path="/capsule/html/:id" children={<CodeCapsule lang="html" />}/>
+          <Route exact path="/capsule/js" children={<CodeCapsule lang="js" />}/>
+          <Route exact path="/capsule/js/:id" children={<CodeCapsule lang="js" />}/>
           <Route exact path="/category/:id" children={<Courses />} />
           <Route exact path="/course/:courseId/:articleId" children={<Articles />} />
           <JwtContext.Provider value={{ token, setJwt }}>
