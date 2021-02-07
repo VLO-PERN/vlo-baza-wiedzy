@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Fade} from 'react-reveal';
+import {Fade} from 'react-awesome-reveal';
 
 
 export const LandingCategoryCard = (props: any) => {
@@ -10,7 +10,7 @@ export const LandingCategoryCard = (props: any) => {
             <Img src={props.img} alt=""></Img>
             </Fade>
             <Bottom>
-                <Fade top delay={200}>
+                <Fade direction={"down"} delay={200}>
                 <Text>
                     {props.name}
                 </Text>
