@@ -11,6 +11,7 @@ import {
 import JwtContext from './Components/JwtContext';
 import { Landing } from "./Landing";
 import { NavBar } from "./Components/NavBar";
+import Exercise from "./Exercise";
 // Components below are lazy-loaded to speed up the page load
 const AdminMain = React.lazy(() => import("./AdminMain"));
 const AdminLogin = React.lazy(() => import("./AdminLogin"));
@@ -49,6 +50,7 @@ export const App = () => {
           <Suspense fallback={<>
             <NavBar></NavBar>
           </>}>
+          <Route exact path="/exercise/:id" children={<Exercise />}/>
           <Route exact path="/capsule/html" children={<CodeCapsule lang="html" />}/>
           <Route exact path="/capsule/html/:id" children={<CodeCapsule lang="html" />}/>
           <Route exact path="/capsule/js" children={<CodeCapsule lang="js" />}/>
