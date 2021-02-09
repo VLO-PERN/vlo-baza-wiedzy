@@ -25,7 +25,7 @@ const Exercise = (props: any) => {
     }
     useEffect(() => {
         try {
-            setData(JSON.parse(id));
+            setData(JSON.parse(decodeURI(atob(id))));
         } catch {
             alert("Wystąpił problem podczas wczytywania danych zadania!");
         }

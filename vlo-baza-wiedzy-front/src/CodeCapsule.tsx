@@ -14,9 +14,9 @@ const CodeCapsule = (props: any) => {
         js: 'console.log("hello")'
     }
     const history = useHistory();
-    const [editorValue, setEditorValue] = useState<string>(id ? atob(id) : (props.lang === "html" ? defaultValues.html : defaultValues.js)); // TS bullshit
+    const [editorValue, setEditorValue] = useState<string>(id ? decodeURI(atob(id)) : (props.lang === "html" ? defaultValues.html : defaultValues.js)); // TS bullshit
     const copyLinkToClipboard = () => {
-        const link = `${window.location.origin}/capsule/${props.lang}/${encodeURI(btoa(editorValue))}`;
+        const link = `${window.location.origin}/capsule/${props.lang}/${encodeURI(btoa(encodeURI(editorValue)))}`;
         navigator.clipboard.writeText(link).then(() => {
             alert("Skopiowano link do schowka!");
         }).catch(e => {
