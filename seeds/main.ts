@@ -43,8 +43,7 @@ export async function seed(knex: Knex): Promise<void> {
             }));
             await coursesToInsert.reduce(async (previousPromise: any, nextAsyncFunction: any) => {
                 await previousPromise;
-                const result = await nextAsyncFunction();
-                console.log(result);
+                await nextAsyncFunction();
               }, Promise.resolve());
         }))
     }
